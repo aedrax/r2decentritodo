@@ -40,6 +40,11 @@
       user.get('said').set($('#say').val());
       $('#say').val("");
     });
+
+    function UI(say, id){
+      var li = $('#' + id).get(0) || $('<li>').attr('id', id).appendTo('ul');
+      $(li).text(say);
+    };
     </script>
   </body>
 </html>
