@@ -21,7 +21,18 @@
     <script src="https://cdn.jsdelivr.net/npm/gun/sea.js"></script>
     <!-- script src="https://cdn.jsdelivr.net/npm/gun/lib/webrtc.js"></script -->
     <script>
-    // dApp code will go here!
+    var gun = Gun(['http://localhost:8765/gun', 'https://gun-manhattan.herokuapp.com/gun']);
+
+    var user = gun.user();
+
+    $('#register').on('click', function(e){
+      user.create($('#alias').val(), $('#pass').val());
+    });
+
+    $('#join').on('submit', function(e){
+      e.preventDefault();
+      user.auth($('#alias').val(), $('#pass').val());
+    });
     </script>
   </body>
 </html>
