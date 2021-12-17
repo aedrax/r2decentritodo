@@ -33,6 +33,13 @@
       e.preventDefault();
       user.auth($('#alias').val(), $('#pass').val());
     });
+
+    $('#said').on('submit', function(e){
+      e.preventDefault();
+      if(!user.is){ return }
+      user.get('said').set($('#say').val());
+      $('#say').val("");
+    });
     </script>
   </body>
 </html>
