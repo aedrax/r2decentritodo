@@ -45,6 +45,11 @@
       var li = $('#' + id).get(0) || $('<li>').attr('id', id).appendTo('ul');
       $(li).text(say);
     };
+
+    gun.on('auth', function(){
+      $('#sign').hide();
+      user.get('said').map().once(UI);
+    });
     </script>
   </body>
 </html>
